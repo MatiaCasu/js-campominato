@@ -13,16 +13,16 @@ function nRandom(min, max){
 // /Funzione numeri random tra Min e Max
 
 // Dichiarazioni Variabili
-var bombeLength = 5;
+var bombeLength = 16;
 var bombe = [];
 var nBomba = 0;
 // /Dichiarazioni Variabili
 
 // Crea una lista di numeri random diversi tra loro
 do{
-  nBomba = nRandom(1, bombeLength);
+  nBomba = nRandom(1, 100);
   if(bombe.includes(nBomba)){
-    nBomba = nRandom(1, bombeLength);
+    nBomba = nRandom(1, 100);
   }
   else{
     bombe.push(nBomba);
