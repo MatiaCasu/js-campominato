@@ -5,8 +5,8 @@ function nRandom(min, max){
 // /Funzione numeri random tra Min e Max
 
 // Dichiarazioni Variabili
-var bombeListaMax = 16;
-var maxRange = 100;
+var bombeListaMax = 2;
+var maxRange = 5;
 var bombeLista = [];
 var nBomba = 0;
 var nUtente = 0;
@@ -28,14 +28,14 @@ while(bombeLista.length < bombeListaMax);
 console.log(bombeLista);
 // Crea una lista(16) di numeri random(1-100) diversi tra loro
 
-
+var esplosione = false;
 // Chiedi all’utente un numero 1-100 fin che l'array nScelti non ha il valore di ciclofinito
 do{
   nUtente = parseInt(prompt("Inserisci un numero da 1 a " + maxRange));
   // Se nUtente è incluso nell'array bombe cambia il valore di nSceltiLength per terminare il ciclo
   if(bombeLista.includes(nUtente)){
     alert("booom!");
-    nScelti.length = maxPartite + 1;
+    esplosione = true;
   }
   // Se nUtente è incluso nell'array di nScelti o fuori range
   else if(nScelti.includes(nUtente) || nUtente < 1 || nUtente > maxRange || isNaN(nUtente)){
@@ -47,9 +47,9 @@ do{
   }
   console.log(nScelti );
 }
-while(nScelti.length < maxPartite);
+while(nScelti.length < maxPartite && esplosione === false);
 
-if (nScelti.length === maxPartite){
+if (esplosione === false){
   alert("Hai vinto!");
 }
 else{
